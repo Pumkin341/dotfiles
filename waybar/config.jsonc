@@ -1,0 +1,301 @@
+[
+  {
+    "layer": "top",
+    "output": "eDP-1",
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/workspaces",
+      "wlr/taskbar"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "tray",
+      "pulseaudio",
+      "network",
+      "backlight",
+      "bluetooth",
+      "battery",
+      "custom/wlogout"
+    ],
+    "custom/launcher": {
+      "format": " ",
+      "on-click": "~/.config/rofi/scripts/launcher_t1",
+      "on-click-right": "killall wofi"
+    },
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "disable-scroll": true,
+      "format": "{icon}",
+      "wrap-scroll": false,
+      "show-special": true,
+      "persistent-workspaces": {
+        "eDP-1": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
+      }
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 18,
+      "icon-theme": "",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "all-outputs": false
+    },
+    "clock": {
+      "format": "{:%I:%M %p}",
+      "format-alt": "{:%A, %B %d, %Y}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "locale": "en_GB.UTF-8",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 4,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+          "months": "<span color='#ffead3'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weekdays": "<span color='#550080'><b>{}</b></span>",
+          "today": "<span color='#ff6699'><b>{}</b></span>"
+        }
+      },
+      "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      }
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-discharging": "{icon} {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-full": " {capacity}%",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "tooltip-format": "{capacity}% — {timeTo}",
+      "max-length": 25,
+      "adapter": "ADP1"
+    },
+    "bluetooth": {
+      "format": " {status}",
+      "format-disabled": " Off",
+      "format-off": " Off",
+      "format-on": " On",
+      "format-connected": " {device_alias}",
+      "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+      "format-icons": {
+        "disabled": "",
+        "off": "",
+        "on": "",
+        "connected": ""
+      },
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "blueman-manager"
+    },
+    "backlight": {
+      "device": "amdgpu_bl2",
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "",
+        "",
+        ""
+      ],
+      "scroll-step": 5,
+      "min-brightness": 1.0
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": " muted",
+      "format-source": " {volume}%",
+      "format-source-muted": " muted",
+      "on-click": "pavucontrol",
+      "on-click-right": "/home/pumk/.config/waybar/scripts/volume-toggle.sh",
+      "scroll-step": 5,
+      "format-icons": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "network": {
+      "interval": 5,
+      "format-alt": "{icon} {ipaddr}/{cidr}",
+      "format-wifi": "{icon} {essid}",
+      "format-ethernet": "{icon} {ifname}",
+      "format-linked": "{icon} {ifname}",
+      "format-disconnected": "{icon}",
+      "format-disabled": "{icon}",
+      "format-icons": {
+        "wifi": [
+          "󰤯",
+          "󰤟",
+          "󰤢",
+          "󰤥",
+          "󰤨"
+        ],
+        "ethernet": "󰈁",
+        "disconnected": "󰖪",
+        "linked": "󰈁",
+        "disabled": ""
+      },
+      "tooltip-format-wifi": "{essid} {icon} ({signalStrength}%)\n↓ {bandwidthDownBytes}   ↑ {bandwidthUpBytes}\n{ifname} • {ipaddr}/{cidr}",
+      "tooltip-format-ethernet": "Wired 󰌘\n↓ {bandwidthDownBytes}   ↑ {bandwidthUpBytes}\n{ifname} • {ipaddr}/{cidr}",
+      "tooltip-format-disconnected": "Disconnected",
+      "on-click-right": "nm-connection-editor",
+      "max-length": 30
+    },
+    "tray": {
+      "icon-size": 18,
+      "spacing": 10,
+      "show-passive-items": true
+    },
+    "custom/wlogout": {
+      "format": "⏻",
+      "on-click": "wlogout -n -b 5 --margin-top=350px --margin-bottom=350px"
+    }
+  },
+  //--------------------------------------------------------------------------------
+  {
+    "layer": "top",
+    "output": "HDMI-A-1",
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/workspaces",
+      "wlr/taskbar"
+    ],
+    "modules-center": [
+      "mpris"
+    ],
+    "modules-right": [
+      "clock",
+      "group/system",
+      "tray"
+    ],
+    "custom/launcher": {
+      "format": " ",
+      "on-click": "~/.config/rofi/scripts/launcher_t1",
+      "on-click-right": "killall wofi"
+    },
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "disable-scroll": true,
+      "format": "{icon}",
+      "wrap-scroll": false,
+      "show-special": true,
+      "persistent-workspaces": {
+        "HDMI-A-1": [
+          "az",
+          "bx",
+          "cc",
+          "dv"
+        ]
+      },
+      "format-icons": {
+        "az": "Z",
+        "bx": "X",
+        "cc": "C",
+        "dv": "V"
+      }
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 18,
+      "icon-theme": "Prefer your theme, e.g., Papirus or Adwaita",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "all-outputs": false
+    },
+    "mpris": {
+      "interval": 1,
+      "format": "{player_icon} {title} - {artist}  {position}/{length}",
+      "format-paused": "{status_icon} <i>{title} - {artist}  {position}/{length}</i>",
+      "format-stopped": "",
+      "player-icons": {
+        "default": "▶",
+        "mpv": "🎵",
+        "spotify": "󰓇",
+        "firefox": "",
+        "chromium": "",
+        "brave": ""
+      },
+      "status-icons": {
+        "paused": "⏸",
+        "stopped": "⏹"
+      },
+      "max-length": 150,
+      "title-len": 60,
+      "artist-len": 30,
+      "album-len": 30,
+      "dynamic-len": 50,
+      "dynamic-order": [
+        "title",
+        "artist"
+      ]
+    },
+    "clock": {
+      "format": "{:%I:%M %p %d %B, %A}",
+      "format-alt": "{:%A, %B %d, %Y}"
+    },
+    "group/system": {
+      "orientation": "horizontal",
+      "modules": [
+        "custom/gpu-usage",
+        "cpu",
+        "memory"
+      ]
+    },
+    "memory": {
+      "interval": 3,
+      "format": "󰍛 {percentage}%",
+      "format-alt": "󰍛 {used}GB"
+    },
+    "cpu": {
+      "interval": 3,
+      "format": "󰻠 {usage}%",
+      "on-click": "kitty -e btop"
+    },
+    "custom/gpu-usage": {
+      "interval": 3,
+      "exec": "cat /sys/class/hwmon/hwmon5/device/gpu_busy_percent",
+      "format": "󰾲 {}%",
+      "return-type": "",
+      "on-click": "kitty -e btop"
+    },
+    "tray": {
+      "icon-size": 18,
+      "spacing": 2,
+      "show-passive-items": true
+    }
+  }
+]

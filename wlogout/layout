@@ -1,0 +1,30 @@
+{
+    "label" : "shutdown",
+    "action" : "pkill -x wlogout; sleep 0.5; hyprshutdown --post-cmd 'systemctl poweroff'",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "pkill -x wlogout; sleep 0.5; hyprshutdown --post-cmd 'reboot'",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "logout",
+    "action" : "pkill -x wlogout; sleep 0.5; hyprshutdown",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "sleep",
+    "action" : "hyprlock & systemctl suspend",
+    "text" : "Sleep",
+    "keybind" : "h"
+}
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
