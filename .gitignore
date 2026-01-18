@@ -1,0 +1,36 @@
+.android/cache
+BraveSoftware/Brave-Browser
+Code - OSS
+Cursor
+Provision
+go/telemetry/local
+libreoffice/4/user
+menus/applications-merged
+mozilla/firefox/Crash Reports
+pulse
+qBittorrent
+session
+spicetify
+spotify
+systemd/user
+vesktop
+xarchiver
+xfce4/xfconf/xfce-perchannel-xml
+xsettingsd
+QtProject.conf
+baloofileinformationrc
+dolphinrc
+electron-builder.json
+filetypesrc
+kwalletrc
+mimeapps.list
+pavucontrol.ini
+tool_state
+trashrc
+user-dirs.dirs
+user-dirs.locale
+Lotion
+autostart
+remmina
+vlc
+dconf

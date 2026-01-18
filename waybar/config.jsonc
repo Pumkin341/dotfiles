@@ -171,7 +171,6 @@
       "tooltip-format-wifi": "{essid} {icon} ({signalStrength}%)\n↓ {bandwidthDownBytes}   ↑ {bandwidthUpBytes}\n{ifname} • {ipaddr}/{cidr}",
       "tooltip-format-ethernet": "Wired 󰌘\n↓ {bandwidthDownBytes}   ↑ {bandwidthUpBytes}\n{ifname} • {ipaddr}/{cidr}",
       "tooltip-format-disconnected": "Disconnected",
-      "on-click-right": "nm-connection-editor",
       "max-length": 30
     },
     "tray": {

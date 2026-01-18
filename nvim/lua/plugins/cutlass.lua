@@ -1,10 +1,9 @@
 return {
   "gbprod/cutlass.nvim",
   opts = {
-
     cut_key = "m",
     override_del = true,
-    exclude = {},
+    exclude = { "dgg", "dG" },
     registers = {
       select = "_",
       delete = "_",

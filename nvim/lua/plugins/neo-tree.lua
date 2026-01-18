@@ -8,6 +8,8 @@ return {
     -- "3rd/image.nvim", -- optional for better image preview
   },
   opts = {
+    open_on_setup = true, -- open neo-tree on startup
+    auto_open = true, -- automatically open when vim starts
     close_if_last_window = false, -- keep sidebar even if last window
     popup_border_style = "rounded",
     enable_git_status = true,
